@@ -21,7 +21,8 @@ trait Param
      * @param string $method 参数类型
      * @return array 返回用户上传参数
      */
-    public function getParams($method=METHOD_POST) {
+    public function getParams($method=METHOD_POST)
+    {
         if ($method == 'post') {
             return Yii::$app->request->post();
         } elseif ($method == 'get') {
@@ -39,7 +40,8 @@ trait Param
      * @param string $method 参数类型
      * @return string 返回对应的key对应的参数值
      */
-    public function getParam(string $key, $method=METHOD_POST) {
+    public function getParam(string $key, $method=METHOD_POST)
+    {
         if ($method == 'post') {
             return Yii::$app->request->post($key);
         } elseif ($method == 'get') {
@@ -54,7 +56,8 @@ trait Param
      * @param $key
      * @return mixed 返回本地配置文件中的参数
      */
-    public function getLocalParam(string $key) {
+    public function getLocalParam(string $key)
+    {
         try {
             return Yii::$app->params[$key];
         } catch (\Exception $exception) {
@@ -66,7 +69,8 @@ trait Param
      * @param string $method
      * @return string token 字符串
      */
-    public function getToken($method=METHOD_POST) {
+    public function getToken($method=METHOD_POST)
+    {
         return $this->getParam('token', $method);
     }
 
@@ -75,7 +79,8 @@ trait Param
      * @param bool $asArray
      * @return bool|string
      */
-    public function getInput(bool $asArray=true) {
+    public function getInput(bool $asArray=true)
+    {
         $input = @file_get_contents('php://input');
         if ($asArray) {
             return json_decode($input, true);
@@ -83,6 +88,4 @@ trait Param
 
         return $input;
     }
-
-
 }

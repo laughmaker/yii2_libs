@@ -18,7 +18,8 @@ trait Cache
     /**
      * @return \yii\caching\CacheInterface
      */
-    public function getCache() {
+    public function getCache()
+    {
         return Yii::$app->cache;
     }
 
@@ -26,7 +27,8 @@ trait Cache
      * @param string $key
      * @return mixed
      */
-    public function getCacheValue(string $key) {
+    public function getCacheValue(string $key)
+    {
         return $this->getCache()->get($key);
     }
 
@@ -36,7 +38,8 @@ trait Cache
      * @param $duration
      * @return bool
      */
-    public function setCacheValue(string $key, $value, $duration=DEFAULT_CACHE_DURATION) {
+    public function setCacheValue(string $key, $value, $duration=DEFAULT_CACHE_DURATION)
+    {
         return $this->getCache()->set($key, $value, $duration);
     }
 
@@ -45,14 +48,16 @@ trait Cache
      * @param $key
      * @return bool
      */
-    public function deleteCacheValue($key) {
+    public function deleteCacheValue($key)
+    {
         return $this->getCache()->delete($key);
     }
 
     /**
      * @param array $keys
      */
-    public function deleteCacheByKeys(array $keys=[]) {
+    public function deleteCacheByKeys(array $keys=[])
+    {
         foreach ($keys as $key) {
             $this->getCache()->delete($key);
         }
@@ -62,7 +67,8 @@ trait Cache
     /**
      * @return yii\redis\Connection;
      */
-    public function getRedis() {
+    public function getRedis()
+    {
         return Yii::$app->cache->redis;
     }
 
@@ -71,7 +77,8 @@ trait Cache
      * @param string $key
      * @return int 剩余的ms数，key不存在，返回-2，key存在，但没有设置剩余时间返回-1
      */
-    public function getRedisItemRemainingTime(string $key) {
+    public function getRedisItemRemainingTime(string $key)
+    {
         return $this->getRedis()->executeCommand('PTTL', [$key]);
     }
 
@@ -80,9 +87,10 @@ trait Cache
      * @param string $keyPattern
      * @return array|bool|null|string
      */
-    public function getRedisKeys(string $keyPattern) {
+    public function getRedisKeys(string $keyPattern)
+    {
         $keys = $this->getRedis()->executeCommand('KEYS', [$keyPattern]);
         return $keys;
     }
-
+    
 }

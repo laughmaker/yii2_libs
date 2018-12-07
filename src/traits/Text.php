@@ -8,7 +8,6 @@
 
 namespace mmgg\traits;
 
-
 trait Text
 {
     /**
@@ -17,7 +16,8 @@ trait Text
      * @param string $encoding
      * @return int
      */
-    public function length($str, $encoding='utf-8') {
+    public function length($str, $encoding='utf-8')
+    {
         return mb_strlen($str, $encoding);
     }
 
@@ -29,7 +29,8 @@ trait Text
      * @param string $encoding
      * @return string
      */
-    public function subStr($str, $start, $length=null, $encoding='utf-8') {
+    public function subStr($str, $start, $length=null, $encoding='utf-8')
+    {
         return mb_substr($str, $start, $length, $encoding);
     }
 
@@ -38,7 +39,8 @@ trait Text
      * @param $html
      * @return array|null|string
      */
-    public function getImageUrls($html) {
+    public function getImageUrls($html)
+    {
         preg_match_all("<img.*?src=\"(.*?.*?)\".*?>", $html, $match1);
         preg_match_all("<img.*?src=\"(.*?.*?)\".*?/>", $html, $match2);
         preg_match_all("<img.*?src='(.*?.*?)'.*?>", $html, $match3);
@@ -46,7 +48,7 @@ trait Text
 
         $match = array_merge($match1, $match2, $match3, $match4);
         $imageUrls = [];
-        foreach($match as $val) {
+        foreach ($match as $val) {
             if (count($val) == 0) {
                 continue;
             }
@@ -71,7 +73,8 @@ trait Text
      * @param string $subStr
      * @return bool
      */
-    public function contains(string $str, string $subStr) {
+    public function contains(string $str, string $subStr)
+    {
         if (mb_strpos($str, $subStr) !== false) {
             return true;
         }
@@ -84,12 +87,13 @@ trait Text
      * @param int $length
      * @return string
      */
-    public function generateRandString(int $length=8) {
+    public function generateRandString(int $length=8)
+    {
         $str = '';
         $seeds = "0123456789abcdefghijklmnopqrstuvwxyz";
         $max = strlen($seeds) - 1;
 
-        for($i=0; $i < $length; $i++) {
+        for ($i=0; $i < $length; $i++) {
             $str .= $seeds[rand(0, $max)];
         }
 
@@ -101,7 +105,8 @@ trait Text
      * @param $string
      * @return bool
      */
-    static public function isJson($string) {
+    public static function isJson($string)
+    {
         json_decode($string);
         return (json_last_error() == JSON_ERROR_NONE);
     }
@@ -111,7 +116,8 @@ trait Text
      * @param $string
      * @return int
      */
-    static public function jsonArrayCount($string) {
+    public static function jsonArrayCount($string)
+    {
         $obj = json_decode($string, true);
         if (json_last_error() == JSON_ERROR_NONE) {
             if (self::isIndexArray($obj)) {
@@ -127,7 +133,8 @@ trait Text
      * @param $arr
      * @return bool
      */
-    static public function isIndexArray(array $arr) {
+    public static function isIndexArray(array $arr)
+    {
         $index = 0;
         foreach (array_keys($arr) as $key) {
             if ($index++ != $key) {
@@ -138,11 +145,12 @@ trait Text
     }
 
     /**
-     * 产生随机昵称
+     * 产生随机昵称，需要在配置文件中配置昵称种子
      * @param $length | 昵称长度
      * @return string
      */
-    static public function generateNickname($length=2) {
+    public static function generateNickname($length=2)
+    {
         $seeds = \Yii::$app->params['nicknameSeeds'];
         $nickname = '';
         for ($i = 0; $i < $length; $i++) {
