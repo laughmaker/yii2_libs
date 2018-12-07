@@ -1,5 +1,5 @@
 {
-    "name": "laughmaker/yii2_libs",
+    "name": "mmgg/yii2_libs",
     "description": "yii2 libs",
     "type": "library",
     "minimum-stability": "dev",
@@ -9,5 +9,13 @@
             "email": "674081011@qq.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "mmgg\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "yiisoft/yii2": "^2.0.0"
+    }
 }
