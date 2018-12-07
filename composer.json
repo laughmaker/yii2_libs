@@ -2,6 +2,7 @@
     "name": "laughmaker/yii2_libs",
     "description": "yii2 libs",
     "type": "library",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "laughmaker",
