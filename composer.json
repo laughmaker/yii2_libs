@@ -1,0 +1,12 @@
+{
+    "name": "mmgg/mmgg_libs",
+    "description": "mmgg libs",
+    "type": "library",
+    "authors": [
+        {
+            "name": "laughmaker",
+            "email": "674081011@qq.com"
+        }
+    ],
+    "require": {}
+}
