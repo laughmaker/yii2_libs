@@ -6,7 +6,7 @@
  * Time: 下午7:39
  */
 
-namespace common\traits;
+namespace mmgg\traits;
 
 use Yii;
 

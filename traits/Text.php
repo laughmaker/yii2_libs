@@ -6,7 +6,7 @@
  * Time: 下午5:27
  */
 
-namespace common\traits;
+namespace mmgg\traits;
 
 
 trait Text

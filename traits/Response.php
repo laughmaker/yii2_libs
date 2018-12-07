@@ -6,9 +6,9 @@
  * Time: 下午2:19
  */
 
-namespace common\traits;
+namespace mmgg\traits;
 
-use common\tools\AliyunLog;
+use mmgg\tools\AliyunLog;
 use Yii;
 
 define('SUCCESS', 2000);

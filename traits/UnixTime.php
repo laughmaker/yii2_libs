@@ -6,7 +6,7 @@
  * Time: 下午4:02
  */
 
-namespace common\traits;
+namespace mmgg\traits;
 
 const SECOND_OF_DAY = 60 * 60 * 24;
 const SECOND_OF_HALF_DAY = 60 * 60 * 12;
