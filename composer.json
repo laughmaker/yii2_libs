@@ -1,6 +1,6 @@
 {
-    "name": "mmgg/yii2_libs",
-    "description": "mmgg libs",
+    "name": "laughmaker/yii2_libs",
+    "description": "yii2 libs",
     "type": "library",
     "authors": [
         {
