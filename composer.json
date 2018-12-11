@@ -13,7 +13,7 @@
         "psr-4": {
             "mmgg\\": "src"
         },
-        "files": ["aliyun-log-php-sdk/Aliyun_Log_Autoload.php"]
+        "files": ["src/aliyun-log-php-sdk/Aliyun_Log_Autoload.php"]
     },
     "require": {
         "php": ">=7.0",
