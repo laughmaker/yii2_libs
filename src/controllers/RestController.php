@@ -6,7 +6,7 @@ use yii\filters\Cors;
 use yii\helpers\ArrayHelper;
 use yii\rest\Controller;
 use mmgg\traits\Param;
-use mmgg\traits\RedisCache;
+use mmgg\traits\Cache;
 use mmgg\traits\Response;
 
 /**
@@ -17,7 +17,7 @@ use mmgg\traits\Response;
  */
 class RestController extends Controller
 {
-    use Response, Param, RedisCache;
+    use Response, Param, Cache;
 
     public $enableCsrfValidation = false;
 
