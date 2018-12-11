@@ -8,7 +8,7 @@
 
 namespace mmgg\traits;
 
-use mmgg\tools\AliyunLog;
+use mmgg\utils\AliyunLog;
 use Yii;
 
 // 请求成功
