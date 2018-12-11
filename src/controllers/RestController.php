@@ -8,6 +8,7 @@ use yii\rest\Controller;
 use mmgg\traits\Param;
 use mmgg\traits\Cache;
 use mmgg\traits\Response;
+use mmgg\traits\UnixTime;
 
 /**
  * Created by HZD.
@@ -17,7 +18,7 @@ use mmgg\traits\Response;
  */
 class RestController extends Controller
 {
-    use Response, Param, Cache;
+    use Response, Param, Cache, UnixTime;
 
     public $enableCsrfValidation = false;
 
