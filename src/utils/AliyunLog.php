@@ -30,13 +30,13 @@ class AliyunLog
 
     public function __construct()
     {
-        $ossConfig = $this->getLocalParam('aliyunLog');
-        $this->_endpoint = $ossConfig['endpoint'];
-        $this->_accessKeyId = $ossConfig['accessKeyId'];
-        $this->_accessKeySecret = $ossConfig['accessKeySecret'];
-        $this->_project = $ossConfig['project'];
-        $this->_logStore = $ossConfig['logStore'];
-        $this->_token = $ossConfig['token'];
+        $config = $this->getLocalParam('aliyunLog');
+        $this->_endpoint = $config['endpoint'];
+        $this->_accessKeyId = $config['accessKeyId'];
+        $this->_accessKeySecret = $config['accessKeySecret'];
+        $this->_project = $config['project'];
+        $this->_logStore = $config['logStore'];
+        $this->_token = $config['token'];
 
         $this->_client = new \Aliyun_Log_Client($this->_endpoint, $this->_accessKeyId, $this->_accessKeySecret, $this->_token);
     }
